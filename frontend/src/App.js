@@ -7,8 +7,14 @@ class App extends Component {
     return (
       <div>
         <h2>Shopping Cart</h2>
-        <ProductsContainer />
-        <CartContainer />
+        <table>
+        <td width="80%">
+          <ProductsContainer />
+        </td>
+        <td>
+          <CartContainer />
+          </td>
+          </table>
       </div>
     );
   }
