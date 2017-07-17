@@ -1,0 +1,44 @@
+[
+  {
+    "SKU": "LN332",
+    "Name": "Isla Bra",
+    "Price": 29,
+    "IMG_URL": ""
+  },
+  {
+    "SKU": "LN336",
+    "Name": "Nordic Rose Bra",
+    "Price": 30,
+    "IMG_URL": ""
+  },
+  {
+    "SKU": "FY240",
+    "Name": "Zentangle Bra",
+    "Price": 34,
+    "IMG_URL": ""
+  },
+  {
+    "SKU": "PN112",
+    "Name": "Clara Bra",
+    "Price": 32,
+    "IMG_URL": ""
+  },
+  {
+    "SKU": "FY158",
+    "Name": "Deco Delight Bra",
+    "Price": 34,
+    "IMG_URL": ""
+  },
+  {
+    "SKU": "LN328",
+    "Name": "Sienna Bra",
+    "Price": 32,
+    "IMG_URL": ""
+  },
+  {
+    "SKU": "LN339",
+    "Name": "Yellow Bra",
+    "Price": 25,
+    "IMG_URL": ""
+  }
+]

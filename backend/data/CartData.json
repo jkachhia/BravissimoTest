@@ -1,0 +1,17 @@
+[
+  {
+    "SKU": "LN332",
+    "Name": "Isla Bra",
+    "Price" : 29,
+    "IMG_URL":"",
+    "QTY":2
+  },
+  {
+    "SKU": "LN336",
+    "Name": "Nordic Rose Bra",
+    "Price" : 30,
+    "IMG_URL":"",
+    "QTY":1
+  }
+
+]
