@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import CartList from './components/CartList';
-import $ from 'jquery';
 export default class CartContainer extends Component {
 constructor() {
     super();
@@ -22,8 +21,7 @@ handleRemoveCart(SKU) {
   this.props.handleRemoveCart(SKU);
 }
 render() {
-  let totalPrice=0;
-  this.state.products.map(product=>{totalPrice+=product.QTY*product.Price});
+  let totalPrice=this.state.products.map((product)=>product.QTY*product.Price).reduce((x,y)=>{return x+y},0);
   return (
     <div id="cart" className="cartContainer">
     <h2>Cart List</h2>

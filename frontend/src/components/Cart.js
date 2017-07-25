@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import $ from 'jquery';
 export default class Cart extends Component {
 
   constructor(){
@@ -13,7 +12,7 @@ export default class Cart extends Component {
      this.props.handleRemoveCart(SKU);
   }
   handleUpdateCart(product){
-    if(this.refs.txtQTY.value!=this.state.cartProduct.QTY){
+    if(this.refs.txtQTY.value!==this.state.cartProduct.QTY){
       this.props.handleUpdateCart(product,this.refs.txtQTY.value);
     }
   }
@@ -45,7 +44,7 @@ componentWillMount(){
           <li>
             <div className="CartBlock">
               <img src="http://www.ikea.com/us/en/images/products/tullsta-chair-gray__55025_PE160027_S4.JPG"
-               alt="product" width="40px" hegith="40px" />
+               alt="product" width="40px" height="40px" />
               <div>
                 <h5><a href=""> {this.props.product.Name} </a></h5>
                 <input type="hidden" ref="txtPrice"  size="1" value={this.state.cartProduct.Price} />

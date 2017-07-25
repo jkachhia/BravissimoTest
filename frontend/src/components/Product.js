@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import $ from 'jquery';
 export default class Product extends Component {
  
  constructor(){
@@ -21,7 +20,7 @@ handleAddCart(e){
           <li className="ProductList">
             <div className="ProductBlock">
               <img src="http://www.ikea.com/us/en/images/products/tullsta-chair-gray__55025_PE160027_S4.JPG"
-               alt="product" width="100px" hegith="100px" /><br/>
+               alt="product" width="100px" height="100px" /><br/>
                 <h3><a href=""> {this.state.product.Name} </a></h3><br/>
                 Price : ${this.state.product.Price} <br/>
                 <input type="hidden" value={this.state.product.SKU} ref="txtSKU" />

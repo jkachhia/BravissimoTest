@@ -29,7 +29,7 @@ componentWillReceiveProps(nextProps){
         {
           this.state.cartProduct.map(product=>{
             return (
-              <Cart product={product} handleUpdateCart={this.handleUpdateCart.bind(this)} handleRemoveCart={this.handleRemoveCart.bind(this)} />
+              <Cart product={product} key={product.SKU} handleUpdateCart={this.handleUpdateCart.bind(this)} handleRemoveCart={this.handleRemoveCart.bind(this)} />
             );
           })
         }

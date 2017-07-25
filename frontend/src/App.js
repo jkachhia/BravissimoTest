@@ -13,7 +13,6 @@ class App extends Component {
   }
 
   removeCartProduct(SKU){
-  var newProducts;
   let that=this;
    $.ajax({
       type:'DELETE',
@@ -83,7 +82,7 @@ class App extends Component {
       cache: false,
       success: function (data) {
         that.setState({cartProducts: data});
-      }.bind(this),
+      },
       error: function (jqXHR, status, err) {
         alert("Error"+status);
       }

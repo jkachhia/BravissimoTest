@@ -40,7 +40,7 @@ export default class ProductsList extends Component {
         {
           this.state.products.map(product=>{
             return (
-              <Product product={product} handleAddCart={this.handleAddCart.bind(this)} />
+              <Product product={product} key={product.SKU} handleAddCart={this.handleAddCart.bind(this)} />
             );
           })
         }

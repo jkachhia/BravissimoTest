@@ -1,9 +1,16 @@
 [
   {
-    "SKU": "LN332",
-    "Name": "Isla Bra",
-    "Price": 29,
+    "SKU": "FY240",
+    "Name": "Zentangle Bra",
+    "Price": 34,
     "IMG_URL": "",
     "QTY": "1"
+  },
+  {
+    "SKU": "LN336",
+    "Name": "Nordic Rose Bra",
+    "Price": 30,
+    "IMG_URL": "",
+    "QTY": 3
   }
 ]
