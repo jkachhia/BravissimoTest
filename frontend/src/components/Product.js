@@ -1,21 +1,33 @@
 import React, { Component } from 'react';
+import $ from 'jquery';
 export default class Product extends Component {
+ 
+ constructor(){
+    super();
+    this.state ={
+      product :[]
+    }
+ }
+ componentWillMount() {
+      this.setState({product: this.props.product});
+  }
+handleAddCart(e){
+  let product=Object.assign(this.props.product);
+  product["QTY"]=1;
+  this.props.handleAddCart(product);
+}
   render(){
     return(
-          <li>
-            <div>
-              <img src="http://assets.myntassets.com/assets/images/1445625/2016/7/26/11469516661643-Leading-Lady-Grey-Pack-of-2-Full-Coverage-Sports-Bras-3641469516661347-2.jpg"
-               alt="product" width="100px" hegith="100px" />
-              <div>
-                <h3>
-                  <a href=""> {this.props.product.Name} </a>
-                </h3>
-                <div>${this.props.product.Price}</div>
-                <div>
-                  <button className="btn btn-primary" >Add to cart</button>
-                </div>
+          <li className="ProductList">
+            <div className="ProductBlock">
+              <img src="http://www.ikea.com/us/en/images/products/tullsta-chair-gray__55025_PE160027_S4.JPG"
+               alt="product" width="100px" hegith="100px" /><br/>
+                <h3><a href=""> {this.state.product.Name} </a></h3><br/>
+                Price : ${this.state.product.Price} <br/>
+                <input type="hidden" value={this.state.product.SKU} ref="txtSKU" />
+                <button className="btn btn-primary btn-sm" onClick={this.handleAddCart.bind(this)} >Add to cart</button>
+                <br/><br/>
               </div>
-            </div>
           </li>
     
     );

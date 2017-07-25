@@ -6,7 +6,14 @@ const productModel=require('./model/Product.js');
 const cartModel=require('./model/Cart.js');
 const LISTENING_PORT=3005;
 
-
+app.use(express.static('www'));
+app.all('*', function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "X-Requested-With,X-HTTP-Method-Override, Content-Type, Accept");
+    res.header("Access-Control-Allow-Methods", "POST, GET, PUT, DELETE, OPTIONS");
+    res.header("Access-Control-Allow-Credentials", false);
+    next();
+});
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
@@ -70,11 +77,13 @@ app.post("/api/product",function(req,res){
 //Add cart
 app.post("/api/cart",function(req,res){
     var product=req.body;
+    console.log("BeforeAdd:"+JSON.stringify(cartModel.getProducts()));
     cartModel.createProduct(product);
     fs.writeFile(cartDataFileName,JSON.stringify(cartModel.getProducts(),null,2),function(err){
         console.error(err);
     })
     success(res,cartModel.getProducts());
+    console.log("AfterAdd:"+JSON.stringify(cartModel.getProducts()));
     
 });
 //Update Product by SKU
@@ -86,6 +95,17 @@ app.put("/api/product/:_SKU",function(req,res){
         console.error(err);
     })
     success(res,productModel.getProducts());
+    
+});
+//Update Cart By SKU
+app.put("/api/cart/:_SKU",function(req,res){
+    var SKU=req.params._SKU;
+    var product=req.body;
+    cartModel.updateProductBySKU(SKU,product);
+    fs.writeFile(cartDataFileName,JSON.stringify(cartModel.getProducts(),null,2),function(err){
+        console.error(err);
+    })
+    success(res,cartModel.getProducts());
     
 });
 
@@ -104,10 +124,9 @@ app.delete("/api/cart/:_SKU",function(req,res){
     var sku=req.params._SKU;
     cartModel.deleteProductBySKU(sku);
     fs.writeFile(cartDataFileName,JSON.stringify(cartModel.getProducts(),null,2),function(err){
-        console.error(err);
+        console.error("Error"+err);
     })
     success(res,cartModel.getProducts());
-    
 });
 
 // Success function
