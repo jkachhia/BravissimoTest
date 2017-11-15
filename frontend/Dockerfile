@@ -1,7 +1,7 @@
 # TODO:
 # - Run gulp as part of the build process to decrease the substantial startup time
 
-FROM BravissimoTest/node:v4.2.1
+FROM jkachhia/node:v4.2.1
 
 MAINTAINER Jigar Kachhia
 
